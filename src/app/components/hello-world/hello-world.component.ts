@@ -1,4 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core'
+import { UsersService } from '../../services/users.service'
+import { UserType } from '../../types'
 
 @Component({
   selector: 'app-hello-world',
@@ -16,7 +18,10 @@ export class HelloWorldComponent implements OnInit {
   @Output()
   private changeMessageEvent = new EventEmitter<string>()
 
-  constructor() { }
+  private _users: UserType[] = [];
+
+
+  constructor(private _usersService: UsersService) { }
 
   ngOnInit(): void {
 
@@ -24,6 +29,7 @@ export class HelloWorldComponent implements OnInit {
 
   changeMessage(): void {
     this.changeMessageEvent.emit("Hello World te dit bonjour")
+    this._users = this._usersService.getAllUsers()    
   }
 
 }
