@@ -16,7 +16,6 @@ export const routes: Routes = [
     {
         path: 'login', component: LoginComponent
     },
-
     {
         path: '', 
         component: LayoutComponent,
@@ -29,7 +28,6 @@ export const routes: Routes = [
             },
         ]
     },
-
 
     // Page de 404 error
     {

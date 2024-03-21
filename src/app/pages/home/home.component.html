@@ -1,1 +1,4 @@
-<p>home works!</p>
+<div class="container mx-auto">
+    <p>home works!</p>
+    <app-hello-world [message]="message" (changeMessageEvent)="changeMessage($event)" />
+</div>
